@@ -11,7 +11,9 @@ class Book(models.Model):
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     author = models.CharField(null=True, max_length=100)
     is_bestselling = models.BooleanField(default=False)
-    slug = models.SlugField(default="", null=False, db_index=True) # harry-potter-1
+    # Set blank = True or set editable = False for default behaviour of the slug field.
+    # Harry potter 1 => harry-potter-1
+    slug = models.SlugField(default="", blank=True, null=False, db_index=True) 
 
     # Override the builtin save method to add slug from title
     def save(self, *args, **kwargs):
