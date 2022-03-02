@@ -1,4 +1,5 @@
 import imp
+from tabnanny import verbose
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator 
 from django.urls import reverse
@@ -11,6 +12,13 @@ class Address(models.Model):
     street = models.CharField(max_length=80)
     postal_code = models.CharField(max_length=4)
     city = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.street}, {self.postal_code}, {self.city}"
+
+    # Add a nested class to override the plural form of Address(Addresses)
+    class Meta:
+        verbose_name_plural = "Address Entries"
 
 
 class Author(models.Model):
