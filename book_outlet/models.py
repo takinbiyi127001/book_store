@@ -16,9 +16,9 @@ class Book(models.Model):
     slug = models.SlugField(default="", blank=True, null=False, db_index=True) 
 
     # Override the builtin save method to add slug from title
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs): # Remove save method as data is prepopulated in the BookAdmin class
+    #     self.slug = slugify(self.title)
+    #     super().save(*args, **kwargs)
 
     # Overrite builtin method get_absolute_url
     def get_absolute_url(self):
