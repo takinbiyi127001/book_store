@@ -1,22 +1,28 @@
 {    
     
-    // "python.pythonPath": "/usr/local/bin/python3",
-    "python.defaultInterpreterPath":"/AppData/Local/Programs/Python/Python310/python.exe",
+    "python.pythonPath": "/usr/local/bin/python3",
+    // "python.defaultInterpreterPath":"/AppData/Local/Programs/Python/Python310/python.exe",
     "window.zoomLevel" : 1,
     "python.languageServer": "Pylance",
-    
-    "version": "0.2.0",
-    "configurations": [
-        {
-        "name": "Extension",
-        "type": "extensionHost",
-        "request": "launch",
-        "runtimeExecutable": "${execPath}",
-        "args": [
-            "--extensionDevelopmentPath=${workspaceFolder}"
-        ]
-        }
-    ],
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django.html",
+        "**/templates/**/*": "django.txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
     "emmet.includeLanguages": { "django-html": "html" }
+    // "version": "0.2.0",
+    // "configurations": [
+    //     {
+    //     "name": "Extension",
+    //     "type": "extensionHost",
+    //     "request": "launch",
+    //     "runtimeExecutable": "${execPath}",
+    //     "args": [
+    //         "--extensionDevelopmentPath=${workspaceFolder}"
+    //     ]
+    //     }
+    // ],
+   
     
 }
